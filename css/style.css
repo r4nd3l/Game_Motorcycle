@@ -32,11 +32,16 @@ html {
   background: radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%);
 }
 body{
-  overflow-y: scroll;
+  text-align: center;
   height: 100vh;
-  margin: 0;
+  margin: 10vh;
   padding: 0;
 }
+
+canvas{
+  border: 10px solid grey;
+}
+
 
 
 

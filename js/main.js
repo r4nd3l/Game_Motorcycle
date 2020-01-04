@@ -113,9 +113,6 @@ function restart(){
 }
 loop();
 
-var instructions = document.createElement("div");
-instructions.innerHTML += "[up] [down] = accelerate <br> [Left] [Rigth] = rotate";
-document.body.appendChild(instructions);
 
 
 
