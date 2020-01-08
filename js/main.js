@@ -1,9 +1,6 @@
 
-var c = document.createElement("canvas");
+var c = document.getElementById('canvas');
 var ctx = c.getContext("2d");
-c.width = 720;
-c.height = 480;
-document.body.appendChild(c);
 
 var perm = [];
 while (perm.length < 255){
@@ -113,7 +110,53 @@ function restart(){
 }
 loop();
 
+// control settings
+document.addEventListener("keydown", button_down);
+document.addEventListener("keyup", button_up);
 
+function button_down(event){
+  let key = event.keyCode;
+
+  if(key == 38){
+    console.log("up");
+    document.getElementsByTagName("kbd")[0].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[0].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
+  }else if(key == 37){
+    console.log("left");
+    document.getElementsByTagName("kbd")[1].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[1].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
+  }else if(key == 40){
+    console.log("down");
+    document.getElementsByTagName("kbd")[2].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[2].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
+  }else if(key == 39){
+    console.log("right");
+    document.getElementsByTagName("kbd")[3].style.cssText = "border:1px solid var(--lg-); color: #ffa502;"
+    document.querySelectorAll(".table p")[3].style.cssText = "box-shadow: 0 0 15px #d35400; text-shadow: 0 0 15px #d35400;"
+  }
+}
+
+function button_up(event){
+  let key = event.keyCode;
+
+  if(key == 38){
+    console.log("up_back");
+    document.getElementsByTagName("kbd")[0].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[0].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 37){
+    console.log("left_back");
+    document.getElementsByTagName("kbd")[1].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[1].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 40){
+    console.log("down_back");
+    document.getElementsByTagName("kbd")[2].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[2].style.cssText = "box-shadow: none; text-shadow: none;"
+  }else if(key == 39){
+    console.log("right_back");
+    document.getElementsByTagName("kbd")[3].style.cssText = "border:1px solid grey; color: var(--gr-);"
+    document.querySelectorAll(".table p")[3].style.cssText = "box-shadow: none; text-shadow: none;"
+  }
+}
 
 
 
